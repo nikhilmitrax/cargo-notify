@@ -1,4 +1,4 @@
-mod metadata;
+mod cargo_metadata;
 
 extern crate semver;
 extern crate serde;
@@ -6,7 +6,7 @@ extern crate serde;
 extern crate serde_derive;
 extern crate serde_json;
 
-use metadata::Message;
+use cargo_metadata::{diagnostic, parse_messages, Message};
 use std::env;
 use std::error::Error;
 use std::process::{Command, Stdio};
@@ -33,14 +33,14 @@ fn main() -> Result<(), Box<dyn Error>> {
         .unwrap();
 
     let mut errors: HashMap<String, usize> = HashMap::new();
-    for message in metadata::parse_messages(command.stdout.take().unwrap()) {
+    for message in parse_messages(command.stdout.take().unwrap()) {
         match message {
             Ok(Message::CompilerMessage(msg)) => {
                 if let Some(rendered) = msg.message.rendered {
                     eprintln!("{}\n", rendered);
                 }
                 match msg.message.level {
-                    metadata::diagnostic::DiagnosticLevel::Error => {
+                    diagnostic::DiagnosticLevel::Error => {
                         *errors.entry(msg.target.name).or_insert(0) += 1
                     }
                     _ => continue,
