@@ -7,7 +7,6 @@ extern crate serde_derive;
 extern crate serde_json;
 
 use metadata::Message;
-use serde_json::{Deserializer, Value};
 use std::env;
 use std::error::Error;
 use std::process::{Command, Stdio};
@@ -15,7 +14,6 @@ use std::process::{Command, Stdio};
 use notify_rust::Notification;
 
 use std::collections::HashMap;
-use std::convert::From;
 use std::result::Result;
 
 fn main() -> Result<(), Box<dyn Error>> {
