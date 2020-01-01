@@ -19,7 +19,6 @@ use std::convert::From;
 use std::result::Result;
 
 fn main() -> Result<(), Box<dyn Error>> {
-    println!("testing");
     let args: Vec<String> = env::args().skip(2).collect();
     Notification::new()
         .summary("Cargo Notifier")
@@ -41,9 +40,6 @@ fn main() -> Result<(), Box<dyn Error>> {
             Ok(Message::CompilerMessage(msg)) => {
                 if let Some(rendered) = msg.message.rendered {
                     eprintln!("{}\n", rendered);
-                }
-                if msg.message.level == metadata::diagnostic::DiagnosticLevel::Error {
-                    println!("Is Error")
                 }
                 match msg.message.level {
                     metadata::diagnostic::DiagnosticLevel::Error => {
