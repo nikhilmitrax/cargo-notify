@@ -3,8 +3,8 @@
 Cargo notify is a cargo plugin to run cargo build-like commands(`check`, `build`) and notify users of build completion and number of errors found (if any) through desktop notifications. Pairs nicely with [carg-watch](https://github.com/passcod/cargo-watch).
 
 # Screenshots
-![notify-success](img/cn-success.png "cargo notify"| width=200)
-![notify-failure](img/cn-failure.png "cargo notify"| width=200)
+![notify-success](img/cn-success.png "cargo notify" | width=200)
+![notify-failure](img/cn-failure.png "cargo notify" | width=200)
 
 # Installation
 ```bash
