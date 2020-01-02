@@ -31,7 +31,7 @@ A big thanks to [oli-obk](https://github.com/oli-obk) for the fantastic [cargo_m
 
 Any contributions are welcome, but here are a few ideas I hope someone would explore.
 
-- Remove vendorized `cargo_metadata` and use the crate directly: The last time I tried using it, there were some problems, and I decided to vendorize and modify it to get going, but maybe we should directly use the crate, and create issues in cargo_metadata's repo if it isn't usable as is.
+- ~~Remove vendorized `cargo_metadata` and use the crate directly: The last time I tried using it, there were some problems, and I decided to vendorize and modify it to get going, but maybe we should directly use the crate, and create issues in cargo_metadata's repo if it isn't usable as is.~~ Done! :tada:
 
 - Cross Platform Support: Currently tested and found working on MacOS, but the underlying notification crate [notify-rust](https://crates.io/crates/notify-rust) supports BSD and Linux as well, just that it's untested on Linux and BSD.
 
