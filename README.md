@@ -23,10 +23,6 @@ cargo notify check
 cargo watch -c -x 'notify check'
 ```
 
-## Credits
-A big thanks to [oli-obk](https://github.com/oli-obk) for the fantastic [cargo_metadata](https://github.com/oli-obk/cargo_metadata) which is used vendorized (and slightly modified) here.
-
-
 # Contribution Ideas
 
 Any contributions are welcome, but here are a few ideas I hope someone would explore.
