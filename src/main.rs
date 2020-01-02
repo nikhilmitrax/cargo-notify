@@ -1,4 +1,4 @@
-mod cargo_metadata;
+extern crate cargo_metadata;
 
 extern crate semver;
 extern crate serde;
